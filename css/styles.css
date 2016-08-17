@@ -1,3 +1,42 @@
-body {
+/*Custom Header for the app*/
+
+/*@media (min-width: 768px) {
+  .navbar-text {
+    float: none;
+    margin-right: 15px;
+    margin-left: 15px;
+  }
+}*/
+
+.navbar {
+  min-height: 80px;
+}
+.navbar-text {
+  font-family: 'Cinzel', serif;
+  font-size: 3em;
+  text-align: center;
+}
+
+
+h3 {
+  font-family: 'Cinzel', serif;
+}
+
+.btn-info {
+  color:black;
+  background-color: #29F3DE;
+  border-color: #29F3DE;
+}
+
+.btn-info:hover {
+  background-color: #F3293E;
+  border-color: #F3293E;
+}
+
+.form-group {
   margin-top: 30px;
+}
+
+.panel-translation {
+background: #F1F1F1;
 }

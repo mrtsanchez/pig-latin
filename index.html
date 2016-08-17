@@ -3,14 +3,59 @@
   <head>
     <link href="css/bootstrap.css" rel="stylesheet" type="text/css">
     <link href="css/styles.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Cinzel" rel="stylesheet">
     <script src="js/jquery-3.1.0.js"></script>
     <script src="js/scripts.js"></script>
 
-    <title></title>
+    <title>Pig Latin Translator</title>
   </head>
   <body>
-    <div class="container">
+    <nav class="navbar navbar-default navbar-static-top">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="#">
+            <img alt="Pig" src="img/pig.png" class="img-responsive">
+          </a>
+        </div>
+        <p class="navbar-text" id="title">PIG LATIN TRANSLATOR</p>
+      </div>
+    </nav>
 
+    <div class="container-fluid">
+      <div class="row-fluid">
+        <div class="col-lg-3">
+          <img src="img/keep-calm-and-speak-pig-latin.png" alt="keep-calm-and-speak-pig-latin" class ="img-responsive"/>
+        </div>
+        <div class="col-lg-9">
+          <div class="row">
+            <div class="panel panel-default">
+              <div class="panel-body">
+                <h3>
+                  Convert from English to Pig Latin:
+                </h3>
+                <form>
+                  <div class="form-group">
+                    <textarea class="form-control" rows="5" id="initial-text" placeholder="Your text here."></textarea>
+                  </div>
+                  <div class="pull-right">
+                    <button type="submit" class="btn btn-info btn-lg">Translate</button>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="panel panel-default">
+              <div class="panel-body panel-translation">
+                Basic panel example
+              </div>
+            </div>
+          </div>
+        </div>
+
+        </div>
+
+      </div>
     </div>
   </body>
 </html>
