@@ -40,3 +40,11 @@ h3 {
 .panel-translation {
 background: #F1F1F1;
 }
+
+.panel {
+  margin-top: 10px;
+}
+
+p {
+  font-size: 2em;
+}

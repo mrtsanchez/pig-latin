@@ -5,51 +5,75 @@ $(document).ready(function() {
     event.preventDefault();
 
     var initialText = $("textarea#initial-text").val();
-    var arraySentence = initialText.split(" ");
 
-    var vowels = ["a", "e", "i", "o", "u", "A", "E", "I", "O", "U"];
+    var words = initialText.split(" ");
 
-    var regex = new RegExp("^[a-zA-Z]+$");
+//     var vowels = ["a", "e", "i", "o", "u", "A", "E", "I", "O", "U"];
+//
+//     var regex = new RegExp("^[a-zA-Z]+$");
+//
+//     var doNothing = [];
+//
+//     for (var i = 0; i < translate.length; i++) {
+//       if (!regex.test(translate[i].charAt(0))) {
+//         doNothing.push(translate[i]);
+//         translate.substr([i],1);
+//       } else if (vowels.indexOf(translate) == -1) {
+//         doNothing.push(translate[i]);
+//         translate.substr([i],1);
+//       }
+//
+//       alert(allwords);
+//       alert(doNothing);
+//   };
+//
+// });
+// });
 
-    var pigLatin = [];
+    // var phrase = words.map(function(word){
+    //
+    //   var doNothing = [];
+    //
+    //   var regex = new RegExp("^[a-zA-Z]+$");
+    //
+    //   var vowels = ["a", "e", "i", "o", "u", "A", "E", "I", "O", "U"]
+    //
+    //   if (vowels.indexOf(word) == -1) {
+    //     delete word;
+    //   } else if (!regex.test(word.charAt(0))) {
+    //     delete word;
+    //   } else {
+    //     return word;
+    //   }
+    // });
 
-    for (var i = 0; i < arraySentence.length; i++) {
-      if (!regex.test(arraySentence[i].charAt(0))) {
-        pigLatin.push(arraySentence[i]);
-      } else if (vowels.indexOf(arraySentence[i].charAt(0)) == -1) {
-          var consonantCheck = arraySentence[i];
-          var newConsonantWord = [];
-          while(s.charAt(0) === '0')
-          s = s.substr(1);
 
+    var phrase = words.map(function(word){
 
-
-          pigLatin.push(newConsonantWord);
-      } else {
-        pigLatin.push(arraySentence[i] + "ay");
+      for(var i=0; i<word.length; i++) {
+        if (!"AEIOUaeiou".includes(word[0])) {
+          if (((word.substr(0,1)==="q")||(word.substr(0,1)==="Q"))&&
+              ((word.substr(1,1)==="u")||(word.substr(1,1)==="U"))) {
+              word = word.substr(2) + word.substr(0,2);
+          } else {
+            word = word.substr(1) + word.substr(0,1);
+          }
+        } else {
+          word+="ay";
+          return word;
+        }
       }
-    };
+    });
+
+    var pigLatin = phrase.join(" ");
+
+    $("#translation-title").text("Your text in Pig Latin, oinkjoy!:");
 
     $("#translation").text(pigLatin);
-
-
-    // for (var i = 0; i < arraySentence.length; i++) {
-    //   if (vowels.indexOf(arraySentence[i].charAt(0)) == -1){
-    //   alert("consonant yes")
-    //   }
-    // };
-
-
 
   });
 
 });
-
-for (var j = 0; j < consonantCheck.length; j++) {
-  if (vowels.indexOf(consonantCheck.charAt(j) == -1)) {
-    newConsonantWord.push(consonantCheck.slice().pop(j));
-  }
-};
 
 
 
